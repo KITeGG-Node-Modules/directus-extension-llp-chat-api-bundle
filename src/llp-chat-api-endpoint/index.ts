@@ -17,6 +17,33 @@ export default defineEndpoint({
 			res.send("pong");
 		});
 
+		// ---------------------
+		// Database endpoints
+		// ---------------------
+
+		// Ingest data
+		router.post("/database/ingest", async (req, res) => {
+			try {
+				const response = await fetch(`${CHAT_API_URL}/database/ingest`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(req.body),
+				});
+
+				const data = await response.json();
+
+				res.send(data);
+			} catch (error: unknown) {
+				res.status(500).send({ error: (error as Error)?.message });
+			}
+		});
+
+		// ---------------------
+		// Chat endpoints
+		// ---------------------
+
 		// Invoke the chat
 		router.post("/chat/invoke", async (req, res) => {
 			const {
