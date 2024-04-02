@@ -21,7 +21,7 @@ The endpoint extensions exposes almost all endpoints needed to interact with the
 #### Ingest data
 
 ```http
-POST /database/ingest
+POST /llp-chat/database/ingest
 ```
 
 This endpoint ingest all data from Directus based on this query:
@@ -57,7 +57,7 @@ This endpoint ingest all data from Directus based on this query:
 #### Invoke the chat
 
 ```http
-POST /chat/invoke
+POST /llp-chat/chat/invoke
 ```
 
 Inkove the chat and get back the full chat response.
@@ -79,7 +79,7 @@ Requested body (required):
 #### Batch invoke the chat
 
 ```http
-POST /chat/batch
+POST /llp-chat/chat/batch
 ```
 
 Invoke a batch request and get a response per entry in body.
@@ -112,7 +112,7 @@ Requested body (required):
 #### Stream the chat
 
 ```http
-POST /chat/stream
+POST /llp-chat/chat/stream
 ```
 
 Streams back the output of the chat agent. This endpoint uses The endpoint uses a server sent event stream to stream the output.  
@@ -135,8 +135,7 @@ Requested body (required):
 ### Hook extensions
 
 Additionally a hook extension is setup to automatically post new and updated courses to the vector database.
-
-### Post data
+This endpoint is not exposed through the endpoint extension and therefore not accessible via the Directus SDK or API
 
 ```http
 POST /database/post
