@@ -21,6 +21,34 @@ export default defineEndpoint({
 		// Database endpoints
 		// ---------------------
 
+		// Get all collections
+		router.get("/database/get/collections", async (req, res) => {
+			try {
+				const response = await fetch(
+					`${CHAT_API_URL}/database/get/collections`
+				);
+				const data = await response.json();
+
+				res.send(data);
+			} catch (error: unknown) {
+				res.status(500).send({ error: (error as Error)?.message });
+			}
+		});
+
+		// Get single collection
+		router.get("/database/get/collection", async (req, res) => {
+			try {
+				const response = await fetch(
+					`${CHAT_API_URL}/database/get/collection?collection_name=${req.query.collection}`
+				);
+				const data = await response.json();
+
+				res.send(data);
+			} catch (error: unknown) {
+				res.status(500).send({ error: (error as Error)?.message });
+			}
+		});
+
 		// Ingest data
 		router.post("/database/ingest", async (req, res) => {
 			try {
