@@ -54,6 +54,22 @@ This endpoint ingest all data from Directus based on this query:
 
 > This should be executed once after starting the API to automatically ingest all needed data to the database. Maybe this could become a Directus Flow.
 
+#### Get all collections in database
+
+```http
+GET /llp-chat/database/get/collections
+```
+
+Returns a list of all available collections in the vector database.
+
+#### Get single collection
+
+```http
+GET /llp-chat/database/get/collection?collection="collection_name"
+```
+
+Returns informations about a singluar collection in the vector database.
+
 #### Invoke the chat
 
 ```http
