@@ -9,9 +9,7 @@ type ChatInput = {
 
 export default defineEndpoint({
 	id: "llp-chat",
-	handler: (router, context) => {
-		const { env } = context;
-
+	handler: (router, { env }) => {
 		const { CHAT_API_URL } = env;
 
 		// Ping
