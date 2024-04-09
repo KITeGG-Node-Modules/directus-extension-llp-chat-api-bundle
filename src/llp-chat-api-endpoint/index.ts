@@ -100,7 +100,7 @@ export default defineEndpoint({
 		// Batch invoke the chat
 		router.post("/chat/batch", async (req, res) => {
 			const batch: {
-				input: ChatInput;
+				inputs: ChatInput;
 				config: Object;
 				kwargs: Object;
 			}[] = req.body;
