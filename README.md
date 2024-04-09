@@ -84,6 +84,12 @@ Requested body (required):
 {
 	"input": {
 		"prompt": "What is the course about?",
+		"chat_history": [
+			[
+				"What is this course about", // This is the message from the user
+				"This course is about using AI image generators, specifically AI text-to-image systems, to create imaginative and compelling visuals. It focuses on designing effective prompts that guide the generator in creating a visual representation of a described image or concept. The course covers topics such as understanding the capabilities and limitations of these generators, the nuances of language that impact their interpretation, and how to use AI image generators to bring imaginary objects or concepts from the future to life. It also discusses various AI image generator tools, models suitable for different applications, training own models, other possibilities, ethical considerations, legal problems, and the impact of these systems on designers and art direction." // This is the answer from the AI model
+			]
+		],
 		"slug": "desiging-prompts",
 		"course_id": "2f69ec48-ae09-4f4c-8348-8f1ef53d5152"
 	},
@@ -103,26 +109,34 @@ Invoke a batch request and get a response per entry in body.
 Requested body (required):
 
 ```json
-[
-	{
-		"input": {
+{
+	"inputs": [
+		{
 			"prompt": "What is the course about?",
+			"chat_history": [
+				[
+					"What is this course about", // This is the message from the user
+					"This course is about using AI image generators, specifically AI text-to-image systems, to create imaginative and compelling visuals. It focuses on designing effective prompts that guide the generator in creating a visual representation of a described image or concept. The course covers topics such as understanding the capabilities and limitations of these generators, the nuances of language that impact their interpretation, and how to use AI image generators to bring imaginary objects or concepts from the future to life. It also discusses various AI image generator tools, models suitable for different applications, training own models, other possibilities, ethical considerations, legal problems, and the impact of these systems on designers and art direction." // This is the answer from the AI model
+				]
+			],
 			"slug": "desiging-prompts",
 			"course_id": "2f69ec48-ae09-4f4c-8348-8f1ef53d5152"
 		},
-		"config": {},
-		"kwargs": {}
-	},
-	{
-		"input": {
+		{
 			"prompt": "What is the course about?",
+			"chat_history": [
+				[
+					"What is this course about", // This is the message from the user
+					"This course is about using AI image generators, specifically AI text-to-image systems, to create imaginative and compelling visuals. It focuses on designing effective prompts that guide the generator in creating a visual representation of a described image or concept. The course covers topics such as understanding the capabilities and limitations of these generators, the nuances of language that impact their interpretation, and how to use AI image generators to bring imaginary objects or concepts from the future to life. It also discusses various AI image generator tools, models suitable for different applications, training own models, other possibilities, ethical considerations, legal problems, and the impact of these systems on designers and art direction." // This is the answer from the AI model
+				]
+			],
 			"slug": "desiging-prompts",
 			"course_id": "2f69ec48-ae09-4f4c-8348-8f1ef53d5152"
-		},
-		"config": {},
-		"kwargs": {}
-	}
-]
+		}
+	],
+	"config": {},
+	"kwargs": {}
+}
 ```
 
 #### Stream the chat
@@ -140,8 +154,14 @@ Requested body (required):
 {
 	"input": {
 		"prompt": "string",
-		"slug": "string",
-		"course_id": "string"
+		"chat_history": [
+			[
+				"What is this course about", // This is the message from the user
+				"This course is about using AI image generators, specifically AI text-to-image systems, to create imaginative and compelling visuals. It focuses on designing effective prompts that guide the generator in creating a visual representation of a described image or concept. The course covers topics such as understanding the capabilities and limitations of these generators, the nuances of language that impact their interpretation, and how to use AI image generators to bring imaginary objects or concepts from the future to life. It also discusses various AI image generator tools, models suitable for different applications, training own models, other possibilities, ethical considerations, legal problems, and the impact of these systems on designers and art direction." // This is the answer from the AI model
+			]
+		],
+		"slug": "desiging-prompts",
+		"course_id": "2f69ec48-ae09-4f4c-8348-8f1ef53d5152"
 	},
 	"config": {},
 	"kwargs": {}
