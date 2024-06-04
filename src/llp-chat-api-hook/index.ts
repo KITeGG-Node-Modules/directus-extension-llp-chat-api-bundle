@@ -43,4 +43,16 @@ export default defineHook(({ action }, { env }) => {
 
 		await updateCourse(payload.course_id.id, "course_sections", CHAT_API_URL);
 	});
+
+	action("git_imports.items.create", async ({ payload }) => {
+		console.log("Creating import from Gitlab: ", payload);
+
+		await updateCourse(payload.course_id.id, "gitlab_import", CHAT_API_URL);
+	});
+
+	action("git_imports.items.update", async ({ payload }) => {
+		console.log("Updating import from Gitlab: ", payload);
+
+		await updateCourse(payload.course_id.id, "gitlab_import", CHAT_API_URL);
+	});
 });
